@@ -1,4 +1,4 @@
-import { SKILLS, QUESTS, RECIPES, INGREDIENTS, LOOT } from "./data.js?v=8";
+import { SKILLS, QUESTS, RECIPES, INGREDIENTS, LOOT } from "./data.js?v=9";
 
 const KEY = "gweonid-atelier-v1";
 const INSPIRE_MAX = 50;

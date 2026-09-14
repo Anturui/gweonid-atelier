@@ -7,8 +7,8 @@ import {
   QUESTS,
   CHAPTERS,
   RECIPE_CHAPTERS
-} from "./data.js?v=8";
-import * as S from "./state.js?v=8";
+} from "./data.js?v=9";
+import * as S from "./state.js?v=9";
 
 const app = document.getElementById("app");
 const bg = document.getElementById("bg");
@@ -93,7 +93,7 @@ function readSaveFile(file) {
 }
 
 function claimReadyCraftQuests() {
-  const ids = ["mix-one", "artisan-mix", "simple-own", "complex-own"];
+  const ids = ["mix-one", "artisan-mix", "simple-own", "complex-own", "own-simple-table", "own-complex-jars"];
   const done = [];
   for (const id of ids) {
     const q = QUESTS.find((x) => x.id === id);
