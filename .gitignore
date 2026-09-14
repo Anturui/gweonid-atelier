@@ -1,0 +1,6 @@
+.DS_Store
+*.tmp
+.cursor
+*.log
+game_like_this/
+interface/
