@@ -7,8 +7,8 @@ import {
   QUESTS,
   CHAPTERS,
   RECIPE_CHAPTERS
-} from "./data.js?v=9";
-import * as S from "./state.js?v=9";
+} from "./data.js?v=10";
+import * as S from "./state.js?v=10";
 
 const app = document.getElementById("app");
 const bg = document.getElementById("bg");
@@ -255,6 +255,18 @@ function continentPins() {
       [-4, -3],
       [-2, 4],
       [2, -2]
+    ],
+    seachild: [
+      [-4, -3],
+      [3, 4]
+    ],
+    stars: [
+      [-3, -4],
+      [4, 2]
+    ],
+    speaking: [
+      [-4, 3],
+      [3, -3]
     ]
   };
   const byZone = {};
