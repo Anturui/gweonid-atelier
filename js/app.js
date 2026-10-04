@@ -7,8 +7,8 @@ import {
   QUESTS,
   CHAPTERS,
   RECIPE_CHAPTERS
-} from "./data.js?v=10";
-import * as S from "./state.js?v=10";
+} from "./data.js?v=11";
+import * as S from "./state.js?v=11";
 
 const app = document.getElementById("app");
 const bg = document.getElementById("bg");
@@ -17,6 +17,7 @@ const bgNext = document.getElementById("bg-next");
 let state = S.loadState();
 let ui = {
   questId: QUESTS[0].id,
+  journalTab: "general",
   recipeId: RECIPES[0].id,
   ingId: INGREDIENTS[0].id,
   mix: {},
@@ -256,17 +257,18 @@ function continentPins() {
       [-2, 4],
       [2, -2]
     ],
-    seachild: [
-      [-4, -3],
-      [3, 4]
-    ],
     stars: [
       [-3, -4],
-      [4, 2]
+      [4, 2],
+      [2, 5]
     ],
     speaking: [
       [-4, 3],
       [3, -3]
+    ],
+    white: [
+      [-4, -3],
+      [3, 4]
     ]
   };
   const byZone = {};
@@ -362,10 +364,17 @@ function worldView() {
   `;
 }
 
+function journalPool() {
+  if (ui.journalTab === "daily") return QUESTS.filter((q) => q.chapter === "Ежедневные");
+  return QUESTS.filter((q) => q.chapter !== "Ежедневные");
+}
+
 function journalView() {
-  const q = QUESTS.find((x) => x.id === ui.questId) || QUESTS[0];
-  const groups = CHAPTERS.map((ch) => {
-    const items = QUESTS.filter((x) => x.chapter === ch)
+  const pool = journalPool();
+  const q = pool.find((x) => x.id === ui.questId) || pool[0] || QUESTS[0];
+  const chapters = ui.journalTab === "daily" ? ["Ежедневные"] : CHAPTERS.filter((ch) => ch !== "Ежедневные");
+  const groups = chapters.map((ch) => {
+    const items = pool.filter((x) => x.chapter === ch)
       .map((x) => {
         const st = state.quests[x.id];
         const ready = S.questReady(state, x);
@@ -402,14 +411,15 @@ function journalView() {
       <section class="window">
         <div class="whead">
           <div class="tabs">
-            <button class="tab active">Общие</button>
+            <button class="tab ${ui.journalTab === "daily" ? "" : "active"}" data-act="journal-tab" data-tab="general">Общие</button>
+            <button class="tab ${ui.journalTab === "daily" ? "active" : ""}" data-act="journal-tab" data-tab="daily">Ежедневные</button>
             <button class="tab" disabled>Сюжет</button>
           </div>
           <h2>Журнал заданий</h2>
           <button class="x" data-act="view" data-view="world">✕</button>
         </div>
         <div class="wbody">
-          <div class="list">${groups}<div class="ch">Число заданий: ${QUESTS.length}</div></div>
+          <div class="list">${groups}<div class="ch">Число заданий: ${pool.length}</div></div>
           <article class="scroll">
             ${q.img ? `<figure class="qhero"><img src="${q.img}" alt=""></figure>` : loc ? `<figure class="qhero"><img src="${loc.bg}" alt=""></figure>` : ""}
             <h3>${esc(q.title)}</h3>
@@ -898,6 +908,16 @@ app.addEventListener("click", (e) => {
     persist();
     go(next);
     toast(`${place.name}. ${place.blurb}`);
+    return;
+  }
+  if (act === "journal-tab") {
+    ui.journalTab = t.dataset.tab === "daily" ? "daily" : "general";
+    const pool = journalPool();
+    if (!pool.some((q) => q.id === ui.questId)) {
+      ui.questId = pool[0].id;
+      ui.drafts["quest-note"] = "";
+    }
+    draw();
     return;
   }
   if (act === "quest") {

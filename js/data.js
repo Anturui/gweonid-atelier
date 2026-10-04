@@ -34,22 +34,13 @@ export const ZONES = [
     blurb: "Тихие холмы между Гвинедаром и Солридом. Виндлоу стоит у воды; Земля говорящих камней лежит южнее и к этим берегам не относится."
   },
   {
-    id: "seachild",
-    name: "Пристань Сичайлд",
-    map: "assets/maps/seachild.jpg",
-    bg: "assets/world/sea-town.jpg",
-    x: 55,
-    y: 62,
-    blurb: "Туманный причал у Двух Корон: краны, прилавки и два портала, между которыми пахнет смолой и солью."
-  },
-  {
     id: "stars",
     name: "Полуостров Падающих Звёзд",
     map: "assets/maps/stars.jpg",
     bg: "assets/world/star-light.jpg",
     x: 66,
     y: 56,
-    blurb: "Южный берег Нуа: башня над обрывом, мосты и ветер, который срывает верхние ноты раньше, чем их успевают записать."
+    blurb: "Южный берег Нуа. Пристань Сичайлд стоит на восточном мысу, у Моря Забвения."
   },
   {
     id: "speaking",
@@ -58,7 +49,16 @@ export const ZONES = [
     bg: "assets/world/stone-plaza.jpg",
     x: 48,
     y: 46,
-    blurb: "Южнее Гвинедара камни держат свет. Здесь пещеры с колбами и площадь, где древо светится само."
+    blurb: "Южнее Гвинедара, между Белым лесом и Солридом. Ущелье, карьер и берег Моря Полумесяца."
+  },
+  {
+    id: "white",
+    name: "Белый лес",
+    map: "assets/maps/white.jpg",
+    bg: "assets/maps/white.jpg",
+    x: 40,
+    y: 42,
+    blurb: "Западные горы Нуа: река Марион, Маревилль и сердце леса под снегом вершин."
   }
 ];
 
@@ -429,56 +429,56 @@ export const LOCATIONS = [
   {
     id: "sea-town",
     name: "Туманная пристань",
-    zone: "seachild",
+    zone: "stars",
     region: "Сичайлд",
     bg: "assets/world/sea-town.jpg",
     blurb: "Башни, краны и красные полотнища в тумане. Пристань пахнет смолой, сырым камнем и дымом.",
-    x: 48,
-    y: 42,
+    x: 66,
+    y: 63,
     views: ["diary", "craft"]
   },
   {
     id: "sea-gate",
     name: "Врата с гербом",
-    zone: "seachild",
+    zone: "stars",
     region: "Сичайлд",
     bg: "assets/world/sea-gate.jpg",
     blurb: "Каменная арка и дару у прилавка. Отсюда в город входят с солью на плаще.",
-    x: 28,
-    y: 30,
+    x: 64,
+    y: 58,
     views: ["diary"]
   },
   {
     id: "sea-portals",
     name: "Два портала",
-    zone: "seachild",
+    zone: "stars",
     region: "Сичайлд",
     bg: "assets/world/sea-portals.jpg",
     blurb: "Синяя и алая двери рядом. Воздух между ними холодный и сладковатый, как озон после грозы.",
-    x: 72,
-    y: 28,
+    x: 69,
+    y: 67,
     views: ["diary", "analysis"]
   },
   {
     id: "sea-market",
     name: "Мостовая рынка",
-    zone: "seachild",
+    zone: "stars",
     region: "Сичайлд",
     bg: "assets/world/sea-market.jpg",
     blurb: "Булыжник, навесы и ряды склянок. Здесь аромат должен перекричать толпу.",
-    x: 36,
-    y: 68,
+    x: 62,
+    y: 66,
     views: ["craft"]
   },
   {
     id: "sea-stall",
     name: "Лавка склянок",
-    zone: "seachild",
+    zone: "stars",
     region: "Сичайлд",
     bg: "assets/world/sea-stall.jpg",
     blurb: "Прилавок с зельями и цветами. Дару торгуется громче, чем пахнут флаконы.",
-    x: 66,
-    y: 64,
+    x: 70,
+    y: 61,
     views: ["craft", "nose"]
   },
   {
@@ -488,8 +488,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-light.jpg",
     blurb: "Обрыв, море и высокая башня. Ветер снимает верхние ноты, база остаётся на камне.",
-    x: 58,
-    y: 36,
+    x: 74,
+    y: 24,
     views: ["diary", "craft"]
   },
   {
@@ -499,8 +499,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-bridge.jpg",
     blurb: "Мост через зелёную лощину. С него слышно и траву, и дальнюю воду.",
-    x: 32,
-    y: 58,
+    x: 52,
+    y: 50,
     views: ["diary"]
   },
   {
@@ -510,8 +510,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-cliff.jpg",
     blurb: "Серая лента дороги между скал. Пыль, хвоя и пустой воздух.",
-    x: 70,
-    y: 52,
+    x: 60,
+    y: 34,
     views: ["diary", "nose"]
   },
   {
@@ -521,8 +521,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-well.jpg",
     blurb: "Фонтан, дерево и мостовая. Городской камень пахнет иначе, чем берег.",
-    x: 26,
-    y: 32,
+    x: 57,
+    y: 46,
     views: ["diary", "craft"]
   },
   {
@@ -532,8 +532,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-camp.jpg",
     blurb: "Синий полог, бочки и цветущее дерево. Привал пахнет тканью, вином и лепестками.",
-    x: 64,
-    y: 72,
+    x: 50,
+    y: 18,
     views: ["craft"]
   },
   {
@@ -543,8 +543,8 @@ export const LOCATIONS = [
     region: "Падающие звёзды",
     bg: "assets/world/star-beach.jpg",
     blurb: "Песок, сосны и тихая вода. Соль здесь мягче, чем у вышки Хоупфорда.",
-    x: 40,
-    y: 22,
+    x: 72,
+    y: 70,
     views: ["nose", "diary"]
   },
   {
@@ -554,8 +554,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-plaza.jpg",
     blurb: "Круг камней и древо, которое светится без фонаря. Воздух сладкий и холодный.",
-    x: 50,
-    y: 44,
+    x: 55,
+    y: 27,
     views: ["craft", "diary"]
   },
   {
@@ -565,8 +565,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-door.jpg",
     blurb: "Лестница в скалу и бумажные фонари. Порог пахнет воском и мокрым мхом.",
-    x: 24,
-    y: 30,
+    x: 42,
+    y: 43,
     views: ["diary"]
   },
   {
@@ -576,8 +576,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-cave.jpg",
     blurb: "Зелёные кристаллы, колбы и фонари. Здесь собирают этюд, который светится даже в темноте.",
-    x: 34,
-    y: 66,
+    x: 40,
+    y: 47,
     views: ["craft"]
   },
   {
@@ -587,8 +587,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-shelf.jpg",
     blurb: "Белые флаконы на корне дерева. Полка пахнет стеклом, спиртом и лесом за спиной.",
-    x: 70,
-    y: 58,
+    x: 66,
+    y: 34,
     views: ["craft", "nose"]
   },
   {
@@ -598,8 +598,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-totem.jpg",
     blurb: "Три лика и котёл между ними. Камень здесь холоднее, чем в роще Гвинедара.",
-    x: 22,
-    y: 50,
+    x: 52,
+    y: 84,
     views: ["diary", "analysis"]
   },
   {
@@ -609,7 +609,7 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-circle.jpg",
     blurb: "Камни кольцом среди берёз. Сюда приходят слушать, а не торговаться.",
-    x: 58,
+    x: 40,
     y: 74,
     views: ["diary"]
   },
@@ -620,8 +620,8 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-lilies.jpg",
     blurb: "Поле лилий, которые светятся у корня. Запах тонкий: вода, пыльца и ночь.",
-    x: 76,
-    y: 34,
+    x: 46,
+    y: 66,
     views: ["nose", "craft"]
   },
   {
@@ -631,9 +631,108 @@ export const LOCATIONS = [
     region: "Говорящие камни",
     bg: "assets/world/stone-pond.jpg",
     blurb: "Узкая вода между камней и красные шляпки грибов. Сырость держит базу дольше, чем ветер.",
-    x: 42,
-    y: 24,
+    x: 58,
+    y: 60,
     views: ["diary", "nose"]
+  },
+  {
+    id: "stone-gorge",
+    name: "Ущелье Спящего",
+    zone: "speaking",
+    region: "Говорящие камни",
+    bg: "assets/world/stone-gorge.jpg",
+    blurb: "Лагерь в каменном мешке: полог, костёр и круглый портал. Здесь пахнет дымом и сырым сводом.",
+    x: 36,
+    y: 48,
+    views: ["craft", "diary"]
+  },
+  {
+    id: "star-study",
+    name: "Кабинет с колесом",
+    zone: "stars",
+    region: "Падающие звёзды",
+    bg: "assets/world/star-study.jpg",
+    blurb: "Деревянная комната, стол с приборами и большое колесо на стене. Пыль шестерён и чернила.",
+    x: 72,
+    y: 30,
+    views: ["craft", "diary"]
+  },
+  {
+    id: "star-statues",
+    name: "Зал статуй",
+    zone: "stars",
+    region: "Падающие звёзды",
+    bg: "assets/world/star-statues.jpg",
+    blurb: "Синий зал и каменные фигуры. Воздух холодный, как вода в закрытом храме.",
+    x: 56,
+    y: 38,
+    views: ["diary", "analysis"]
+  },
+  {
+    id: "star-tree",
+    name: "Дерево на обрыве",
+    zone: "stars",
+    region: "Падающие звёзды",
+    bg: "assets/world/star-tree.jpg",
+    blurb: "Одно дерево на краю холма над морем. Ветер здесь снимает всё, кроме зелени.",
+    x: 44,
+    y: 76,
+    views: ["diary", "nose"]
+  },
+  {
+    id: "sol-twins",
+    name: "Два зуба",
+    zone: "solzreed",
+    region: "Солрид",
+    bg: "assets/world/sol-twins.jpg",
+    blurb: "Две скалы над пашней. Ночью воздух режет: камень, сырое поле и хвоя.",
+    x: 50,
+    y: 86,
+    views: ["diary", "nose"]
+  },
+  {
+    id: "sol-night-bridge",
+    name: "Сломанный мост",
+    zone: "solzreed",
+    region: "Солрид",
+    bg: "assets/world/sol-bridge-night.jpg",
+    blurb: "Ночная река и мост, который не сходится. Пахнет водой, мокрым камнем и травой берега.",
+    x: 14,
+    y: 84,
+    views: ["diary"]
+  },
+  {
+    id: "white-heart",
+    name: "Сердце Белого леса",
+    zone: "white",
+    region: "Белый лес",
+    bg: "assets/maps/white.jpg",
+    blurb: "Высокая роща под снежными вершинами. Сюда поднимаются, когда нужен холодный, чистый воздух.",
+    x: 62,
+    y: 42,
+    views: ["diary", "nose"]
+  },
+  {
+    id: "white-river",
+    name: "Река Марион",
+    zone: "white",
+    region: "Белый лес",
+    bg: "assets/maps/white.jpg",
+    blurb: "Река между горами. Вода пахнет камнем и хвоей, не солью Солрида.",
+    x: 28,
+    y: 62,
+    views: ["diary"]
+  },
+  {
+    id: "white-town",
+    name: "Маревилль",
+    zone: "white",
+    region: "Белый лес",
+    bg: "assets/maps/white.jpg",
+    blurb: "Перекрёсток дорог в долине. Здесь сходятся обозы с запада и с Земли говорящих камней.",
+    x: 48,
+    y: 64,
+    views: ["diary", "craft"]
   }
 ];
 
@@ -868,6 +967,66 @@ export const RECIPES = [
 ];
 
 export const QUESTS = [
+  {
+    id: "day-aroma-1",
+    chapter: "Ежедневные",
+    title: "Утренний аромат",
+    npc: "Энот, ретортчик",
+    text: "Каждое утро гильдия ждёт новый пробник. Придумай название смеси на сегодня: две-три ноты своими словами. Капли не нужны. Завтра задание откроется снова.",
+    xp: 10,
+    ess: 2,
+    coins: 1,
+    skill: "mix",
+    skillXp: 12,
+    loc: "atelier",
+    img: "assets/world/alchemy-tent.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "day-aroma-2",
+    chapter: "Ежедневные",
+    title: "Полуденный аромат",
+    npc: "Казим, травник Консорциума",
+    text: "Второй пробник дня — не повтор утреннего. Напиши другое название и чем эта смесь пахнет в середине дня. Завтра можно сдать снова.",
+    xp: 10,
+    ess: 2,
+    coins: 1,
+    skill: "mix",
+    skillXp: 12,
+    loc: "workshop",
+    img: "assets/world/alchemy-flasks.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "day-aroma-3",
+    chapter: "Ежедневные",
+    title: "Вечерний аромат",
+    npc: "Энот, ретортчик",
+    text: "Третий пробник — вечерний. Название должно помнить тепло и шлейф, не утренний цитрус. Задание обновляется на следующий день.",
+    xp: 12,
+    ess: 3,
+    coins: 1,
+    skill: "mix",
+    skillXp: 14,
+    loc: "farm",
+    img: "assets/quests/own-simple-table.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "day-etude",
+    chapter: "Ежедневные",
+    title: "Дневной этюд",
+    npc: "Ясмин, летописец",
+    text: "Кроме пробников нужен один этюд: место, воздух и как запах изменился. Напиши коротко. Завтра страница снова будет пустой.",
+    xp: 14,
+    ess: 3,
+    coins: 2,
+    skill: "notes",
+    skillXp: 16,
+    loc: "grove",
+    img: "assets/world/spirit-grove.jpg",
+    need: { write: 1 }
+  },
   {
     id: "diary-one",
     chapter: "Лес Гвинедар",
@@ -1997,6 +2156,246 @@ export const QUESTS = [
     need: { write: 1 }
   },
   {
+    id: "speak-gorge",
+    chapter: "Земля говорящих камней",
+    title: "Лагерь в ущелье",
+    npc: "Хранитель камней",
+    text: "В ущелье стоит полог, костёр и круглый портал. Запиши, чем пахнет лагерь: дым, сырой камень или холод из светящейся двери.",
+    xp: 11,
+    ess: 3,
+    coins: 2,
+    skill: "notes",
+    skillXp: 14,
+    loc: "stone-gorge",
+    img: "assets/world/stone-gorge.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "star-wheel",
+    chapter: "Полуостров Падающих Звёзд",
+    title: "Кабинет с колесом",
+    npc: "Хранитель башни",
+    text: "В деревянной комнате стол, склянки и большое колесо. Запиши три запаха: дерево стен, чернила, металл шестерни.",
+    xp: 11,
+    ess: 3,
+    coins: 2,
+    skill: "notes",
+    skillXp: 14,
+    loc: "star-study",
+    img: "assets/world/star-study.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "star-idols",
+    chapter: "Полуостров Падающих Звёзд",
+    title: "Синий зал статуй",
+    npc: "Ясмин, летописец",
+    text: "Фигуры стоят в синем свете. Запиши, чем зал отличается от площади: холод камня, пыль пьедестала или тишина без ветра.",
+    xp: 12,
+    ess: 4,
+    coins: 2,
+    skill: "analysis",
+    skillXp: 14,
+    loc: "star-statues",
+    img: "assets/world/star-statues.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "star-lone",
+    chapter: "Полуостров Падающих Звёзд",
+    title: "Дерево над морем",
+    npc: "Казим, травник Консорциума",
+    text: "На краю холма одно дерево. Запиши, что сильнее — зелень кроны, соль снизу или голая земля.",
+    xp: 10,
+    ess: 3,
+    coins: 1,
+    skill: "nose",
+    skillXp: 12,
+    loc: "star-tree",
+    img: "assets/world/star-tree.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "sol-twins-note",
+    chapter: "Полуостров Солрид",
+    title: "Два зуба над пашней",
+    npc: "Страж Хоупфорда",
+    text: "Две скалы стоят над полем. Ночью запиши, чем воздух здесь отличается от лавандовых гряд: камень, сырая земля или хвоя.",
+    xp: 10,
+    ess: 3,
+    coins: 1,
+    skill: "nose",
+    skillXp: 12,
+    loc: "sol-twins",
+    img: "assets/world/sol-twins.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "sol-bridge-note",
+    chapter: "Полуостров Солрид",
+    title: "Ночь у сломанного моста",
+    npc: "Ясмин, летописец",
+    text: "Мост над рекой не сходится. Запиши воду, мокрый камень и траву берега. Море с вышки сюда не подмешивай.",
+    xp: 10,
+    ess: 3,
+    coins: 1,
+    skill: "notes",
+    skillXp: 12,
+    loc: "sol-night-bridge",
+    img: "assets/world/sol-bridge-night.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "white-heart-note",
+    chapter: "Белый лес",
+    title: "Воздух сердца леса",
+    npc: "Казим, травник Консорциума",
+    text: "Под снежными вершинами роща холоднее Гвинедара. Запиши, что слышишь первым: хвою, камень или чистый ветер без дыма лагеря.",
+    xp: 11,
+    ess: 3,
+    coins: 2,
+    skill: "nose",
+    skillXp: 14,
+    loc: "white-heart",
+    img: "assets/maps/white.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "white-river-note",
+    chapter: "Белый лес",
+    title: "Берег реки Марион",
+    npc: "Ясмин, летописец",
+    text: "Река идёт между гор. Одна запись: вода, мокрый камень, хвоя на склоне. Это не ручей Солрида.",
+    xp: 10,
+    ess: 3,
+    coins: 1,
+    skill: "notes",
+    skillXp: 12,
+    loc: "white-river",
+    img: "assets/maps/white.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "white-town-note",
+    chapter: "Белый лес",
+    title: "Перекрёсток Маревилля",
+    npc: "Ку-рара, кладовщик-дару",
+    text: "В Маревилле сходятся дороги. Запиши, чем пахнет перекрёсток: пыль обоза, дерево домов или чужой плащ с востока.",
+    xp: 10,
+    ess: 3,
+    coins: 2,
+    skill: "analysis",
+    skillXp: 12,
+    loc: "white-town",
+    img: "assets/maps/white.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-stone-gorge",
+    chapter: "Свой путь",
+    title: "Этюд ущелья",
+    npc: "Хранитель камней",
+    text: "Собери этюд лагеря в ущелье: дым костра, сырой свод, холод портала. Напиши название.",
+    xp: 13,
+    ess: 4,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "stone-gorge",
+    img: "assets/world/stone-gorge.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-star-study",
+    chapter: "Свой путь",
+    title: "Этюд кабинета",
+    npc: "Хранитель башни",
+    text: "Собери этюд комнаты с колесом: дерево, чернила, металл. Напиши название.",
+    xp: 13,
+    ess: 4,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "star-study",
+    img: "assets/world/star-study.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-star-statues",
+    chapter: "Свой путь",
+    title: "Этюд синего зала",
+    npc: "Ясмин, летописец",
+    text: "Собери холодный этюд статуй: камень, пыль, синий воздух. Без сладкой базы. Напиши название.",
+    xp: 14,
+    ess: 4,
+    coins: 2,
+    skill: "mix",
+    skillXp: 18,
+    loc: "star-statues",
+    img: "assets/world/star-statues.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-star-tree",
+    chapter: "Свой путь",
+    title: "Этюд одинокого дерева",
+    npc: "Казим, травник Консорциума",
+    text: "Собери этюд дерева на обрыве: зелень, соль, голая земля. Напиши название.",
+    xp: 12,
+    ess: 3,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "star-tree",
+    img: "assets/world/star-tree.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-sol-twins",
+    chapter: "Свой путь",
+    title: "Этюд двух зубьев",
+    npc: "Страж Хоупфорда",
+    text: "Собери ночной этюд двух скал над пашней. Напиши название и что убрал, чтобы смесь не стала лавандой с гряд.",
+    xp: 13,
+    ess: 4,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "sol-twins",
+    img: "assets/world/sol-twins.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-sol-bridge",
+    chapter: "Свой путь",
+    title: "Этюд сломанного моста",
+    npc: "Ясмин, летописец",
+    text: "Собери ночной этюд реки: вода, мокрый камень, трава. Напиши название.",
+    xp: 12,
+    ess: 3,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "sol-night-bridge",
+    img: "assets/world/sol-bridge-night.jpg",
+    need: { write: 1 }
+  },
+  {
+    id: "own-white-heart",
+    chapter: "Свой путь",
+    title: "Этюд Белого леса",
+    npc: "Казим, травник Консорциума",
+    text: "Собери холодный этюд сердца леса: хвоя, камень, чистый ветер. Напиши название.",
+    xp: 13,
+    ess: 4,
+    coins: 2,
+    skill: "mix",
+    skillXp: 16,
+    loc: "white-heart",
+    img: "assets/maps/white.jpg",
+    need: { write: 1 }
+  },
+  {
     id: "decode-maria",
     chapter: "Чужие города",
     title: "Раскрыть аромат из Марианополя",
@@ -2042,12 +2441,14 @@ export const LOOT = [
 ];
 
 export const CHAPTERS = [
+  "Ежедневные",
   "Лес Гвинедар",
   "Полуостров Солрид",
   "Холмы Лилиот",
-  "Пристань Сичайлд",
   "Полуостров Падающих Звёзд",
+  "Пристань Сичайлд",
   "Земля говорящих камней",
+  "Белый лес",
   "Свой путь",
   "Чужие города"
 ];
